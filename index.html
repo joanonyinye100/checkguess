@@ -37,9 +37,9 @@
                 message.innerHTML = ` 1nvalid!!! enter a number between 1-100.`;
             }  else if ( randomNumber > guessInput){
                 message.innerHTML= `Oops number is higher than the guessed number: ${guessInput}, please kindly enter a greater number <br>  total trial = ${counter++}`;
-                counter++
+                
             } else if (randomNumber < guessInput) {
-                counter++;
+                
                 message.innerHTML =` Oops number is lower than the guessed number: ${guessInput}, please kindly enter a lesser number <br> total trial = ${counter}`;
                 
             } 
