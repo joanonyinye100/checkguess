@@ -13,14 +13,15 @@
     <button  onclick="checkGuess()">Submit Guess</button> 
     
     <p id="message"></p>
+    <button id="btnPlayGameAgain" onclick="playGame()" style="display: none;">Play game again</button>
     
     <script>
         let counter = 0;
-        let randomNumber = Math.floor(Math.random() * 100) + 1;
-
+        let randomNumber= generateRandomNumber();
 
         let guessInput = document.getElementById("guessInput");
         let message = document.getElementById("message");
+        let btnPlayGameAgain = document.getElementById("btnPlayGameAgain");
          
         
         function checkGuess() {
@@ -28,23 +29,31 @@
             counter++;
             if (randomNumber == guessInput) {
                 message.innerHTML = `Congratulations you got the number correct  <br> You got it at  trial = ${counter}`;
+                btnPlayGameAgain.style.display="block";
                 
             }else if (guessInput > 100) {
                 message.innerHTML = ` 1nvalid!!! kindly enter a number between 1-100.`;
             } else if ( guessInput < 1) {
                 message.innerHTML = ` 1nvalid!!!  kindly enter a number between 1-100.`;
-            }  else if ( randomNumber > guessInput){
-                message.innerHTML= `Oops number is higher than the guessed number: ${guessInput}, please kindly enter an higher number <br>  total trial = ${counter}  Try again.`;
+            }  else if ( guessInput > randomNumber ){
+                message.innerHTML= `Oops guessed is higher than the  number:  please kindly enter an lower number <br>  total trial = ${counter}  Try again.`;
                 
-            } else if (randomNumber < guessInput) {
+            } else if (guessInput < randomNumber) {
                 
-                message.innerHTML =` Oops number is lower than the guessed number: ${guessInput}, please kindly enter a lesser number <br> total trial = ${counter} Try again.`;
+                message.innerHTML =` Oops guessed number is lower than the number: please kindly enter a higher number <br> total trial = ${counter} Try again.`;
                 
             } 
              else{
                 message.innerHTML = `Please  kindly enter a number`;
             }
             
+        }
+        function generateRandomNumber(){
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            return randomNumber;
+        }
+        function playGame(){
+            location.reload();
         }
         
     </script>
