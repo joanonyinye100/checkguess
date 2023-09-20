@@ -25,16 +25,16 @@
         
         function checkGuess() {
             let guessInput = parseInt(document.getElementById("guessInput").value);
+            counter++;
             if (randomNumber == guessInput) {
-                counter++;
-                message.innerHTML = `Congratulations you got the number correct  <br> total trial = ${counter++}`;
+                message.innerHTML = `Congratulations you got the number correct  <br> total trial = ${counter}`;
                 
             }else if (guessInput > 100) {
-                message.innerHTML = ` 1nvalid!!! enter a number between 1-100.`;
+                message.innerHTML = ` 1nvalid!!! kindly enter a number between 1-100.`;
             } else if ( guessInput < 1) {
-                message.innerHTML = ` 1nvalid!!! enter a number between 1-100.`;
+                message.innerHTML = ` 1nvalid!!!  kienter a number between 1-100.`;
             }  else if ( randomNumber > guessInput){
-                message.innerHTML= `Oops number is higher than the guessed number: ${guessInput}, please kindly enter a greater number <br>  total trial = ${counter++}`;
+                message.innerHTML= `Oops number is higher than the guessed number: ${guessInput}, please kindly enter a greater number <br>  total trial = ${counter}`;
                 
             } else if (randomNumber < guessInput) {
                 
