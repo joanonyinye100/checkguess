@@ -9,7 +9,7 @@
     <h1>Guess the Number Game</h1>
     
     <p>Guess a number between 1 and 100:</p>
-    <input type="number" id="guessInput">
+    <input type="number" id="guessInput" autofocus>
     <button  onclick="checkGuess()">Submit Guess</button> 
     
     <p id="message"></p>
@@ -27,7 +27,7 @@
             let guessInput = parseInt(document.getElementById("guessInput").value);
             counter++;
             if (randomNumber == guessInput) {
-                message.innerHTML = `Congratulations you got the number correct  <br> total trial = ${counter}`;
+                message.innerHTML = `Congratulations you got the number correct  <br> You got it at  trial = ${counter}`;
                 
             }else if (guessInput > 100) {
                 message.innerHTML = ` 1nvalid!!! kindly enter a number between 1-100.`;
