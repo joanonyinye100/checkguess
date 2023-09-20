@@ -10,7 +10,7 @@
     
     <p>Guess a number between 1 and 100:</p>
     <input type="number" id="guessInput">
-    <button  id="checkGuess">Submit Guess</button> 
+    <button  onclick="checkGuess()">Submit Guess</button> 
     
     <p id="message"></p>
     
@@ -21,11 +21,9 @@
 
         let guessInput = document.getElementById("guessInput");
         let message = document.getElementById("message");
-        let checkGuess = document.getElementById("checkGuess");
-        checkGuess.addEventListener("click", btnSubmit);
          
         
-        function btnSubmit() {
+        function checkGuess() {
             let guessInput = parseInt(document.getElementById("guessInput").value);
             if (randomNumber == guessInput) {
                 counter++
