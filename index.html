@@ -25,9 +25,8 @@
         
         function checkGuess() {
             let guessInput = parseInt(document.getElementById("guessInput").value);
-            counter++;
             if (randomNumber == guessInput) {
-                
+                counter++;
                 message.innerHTML = `Congratulations you got the number correct  <br> total trial = ${counter++}`;
                 
             }else if (guessInput > 100) {
